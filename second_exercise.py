@@ -27,4 +27,3 @@ if __name__ == '__main__':
         print(get_numbers_ticket(*input_str))
     except ValueError:
         print('Input data should be in this format: {min: int} {max: int} {quantity: int}')
-        # the end)
