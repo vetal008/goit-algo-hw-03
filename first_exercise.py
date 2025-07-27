@@ -2,8 +2,9 @@ from datetime import datetime
 
 "Main function which returns difference \
 between some date and today"
+
 def get_days_from_today(date: str) -> int:
-    try:
+    try:            # checking for mistakes
         date_struct = datetime.strptime(date, "%Y-%m-%d")
     except ValueError:
         print("Invalid format. Use format YYYY-MM-DD")
