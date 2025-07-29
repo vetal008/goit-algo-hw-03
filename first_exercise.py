@@ -9,7 +9,7 @@ def get_days_from_today(date: str):
     except ValueError:
         return("Invalid format. Use format YYYY-MM-DD")
     today_date = datetime.today().date()
-    days_difference = abs(today_date - date_struct).days
+    days_difference = (today_date - date_struct).days
     return days_difference
 
 
