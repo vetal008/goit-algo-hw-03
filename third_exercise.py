@@ -29,3 +29,4 @@ def normalize_phone_list(numbers: list) -> list:
 Print clear numbers
 """
 print("Нормалізовані номери телефонів для SMS-розсилки:", *normalize_phone_list(raw_numbers), sep='\n')
+# Some code
