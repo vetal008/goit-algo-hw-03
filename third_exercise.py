@@ -13,20 +13,21 @@ raw_numbers = [
 ]
 
 
-def normalize_phone_list(numbers: list) -> list:
+def normalize_phone(number: str) -> str:
     "******Main function which make our numbers clear****"
-    clear_numbers = []
-    for number in numbers:
-        number = re.sub('[^0-9]', '', number) #remove all not number values
-        if number.startswith('0') and len(number) ==  10: #here we add '+38' or '+'
-            number = '+38' + number
-        if number.startswith('38'):
-            number = '+' + number
-        clear_numbers.append(number)
-    return clear_numbers # return list of numbers
+    number = re.sub('[^0-9]', '', number)  #remove all not number values
+    if number.startswith('0') and len(number) ==  10: #here we add '+38' or '+'
+        number = '+38' + number
+    if number.startswith('38'):
+        number = '+' + number
+
+    return number # return clear
 
 """
 Print clear numbers
 """
-print("Нормалізовані номери телефонів для SMS-розсилки:", *normalize_phone_list(raw_numbers), sep='\n')
-# Some code
+print("Нормалізовані номери телефонів для SMS-розсилки:")
+for raw_number in raw_numbers:
+    "***Call for main function for normalize numbers***"
+    print(normalize_phone(raw_number))
+

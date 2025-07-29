@@ -3,13 +3,12 @@ from datetime import datetime
 "Main function which returns difference \
 between some date and today"
 
-def get_days_from_today(date: str) -> int:
+def get_days_from_today(date: str):
     try:            # checking for mistakes
-        date_struct = datetime.strptime(date, "%Y-%m-%d")
+        date_struct = datetime.strptime(date, "%Y-%m-%d").date()
     except ValueError:
-        print("Invalid format. Use format YYYY-MM-DD")
-        exit(1)
-    today_date = datetime.today()
+        return("Invalid format. Use format YYYY-MM-DD")
+    today_date = datetime.today().date()
     days_difference = abs(today_date - date_struct).days
     return days_difference
 
