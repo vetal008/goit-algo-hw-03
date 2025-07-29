@@ -17,3 +17,4 @@ def get_days_from_today(date: str):
 if __name__ == '__main__':
     date_str = input("Enter a date(YYYY-MM-DD): ")
     print(get_days_from_today(date_str))
+    # final
